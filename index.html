@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food App</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Body render transition */
+    body {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Button click effect */
+    .clicked {
+      background-color: #34d399; /* Green background */
+      color: white;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      transform: scale(1.05); /* Slightly enlarge on click */
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-blue-600">RishiBites</div>
+  
+      <!-- Search Bar -->
+      <form action="" class="flex items-center space-x-2">
+        <input type="text" placeholder="Search..." class="w-full max-w-xs border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" id="searchBar" />
+      </form>
+  
+      <!-- Buttons (desktop menu) -->
+      <div id="head" class="hidden md:flex space-x-4">
+        <button id="filter" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">Filter</button>
+        <button id="offers" class="px-4 py-2 bg-yellow-200 rounded-lg hover:bg-yellow-300 transition">Offers</button>
+        <button id="ratings" class="px-4 py-2 bg-green-200 rounded-lg hover:bg-green-300 transition">Rating 4.5+</button>
+        <button id="alcohol" class="px-4 py-2 bg-red-200 rounded-lg hover:bg-red-300 transition">Alcohol</button>
+      </div>
+  
+      <!-- Hamburger (Mobile menu) -->
+      <div class="md:hidden flex items-center">
+        <button id="hamburgerBtn" class="px-3 py-2 text-gray-500 hover:text-gray-800 text-4xl">
+          ☰ <!-- Hamburger icon -->
+        </button>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu (initially hidden) -->
+    <div id="mobileMenu" class="hidden flex flex-col space-y-4 px-4 py-2 bg-gray-300 absolute top-[75px] right-3 rounded-md md:hidden transition-all ease-in-out duration-300">
+      <button id="mfilter" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">Filter</button>
+      <button id="moffers" class="px-4 py-2 bg-yellow-200 rounded-lg hover:bg-yellow-300 transition">Offers</button>
+      <button id="mratings" class="px-4 py-2 bg-green-200 rounded-lg hover:bg-green-300 transition">Rating 4.5+</button>
+      <button id="malcohol" class="px-4 py-2 bg-red-200 rounded-lg hover:bg-red-300 transition">Alcohol</button>
+    </div>
+  </nav>
+  <!-- Food Items Section -->
+  <div id="root" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <!-- Card -->
+          
+          <!-- Repeat this card structure dynamically -->
+
+
+         
+        </div>
+        <!-- Filter Popup -->
+<div id="popup" class="filterpopup fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden">
+  
+  <!-- filterpopup fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden -->
+  <div class="bg-white p-6 rounded-lg shadow-lg w-64">
+    <h3 class="text-xl font-semibold mb-4">Filter By Price</h3>
+    
+    <!-- Sort options -->
+    <form id="filterForm">
+      <div class="mb-4">
+        <input type="radio" id="lowToHigh" name="price" value="lowToHigh" class="mr-2">
+        <label for="lowToHigh">Low to High</label>
+      </div>
+      <div class="mb-4">
+        <input type="radio" id="highToLow" name="price" value="highToLow" class="mr-2">
+        <label for="highToLow">High to Low</label>
+      </div>
+    </form>
+
+    <div class="mt-4 text-right">
+      <button id="applyFilter" class="bg-blue-500 text-white px-4 py-2 rounded-md">Apply Filter</button>
+      <button id="closeFilter" class="ml-2 text-gray-600">Close</button>
+    </div>
+  </div>
+</div>
+        
+
+  <script src="./script.js"></script>
+</body>
+</html>
